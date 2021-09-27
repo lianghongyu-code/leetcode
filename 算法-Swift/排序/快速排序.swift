@@ -15,10 +15,10 @@ func quickSort(_ begin: Int, _ end: Int) {
     }
     
     // 获取轴点的index
-    let pivot = pivotIndex(begin, end)
+    let pivotIndex = pivotIndex(begin, end)
     // 对轴点两边的两个序列递归
-    quickSort(begin, pivot)
-    quickSort(pivot + 1, end)
+    quickSort(begin, pivotIndex)
+    quickSort(pivotIndex + 1, end)
 }
 
 // 获取轴点元素的最终位置 [begin, end)

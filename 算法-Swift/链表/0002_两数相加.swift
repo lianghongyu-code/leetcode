@@ -11,25 +11,25 @@
 import Foundation
 
 func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-    var head1 = l1
-    var head2 = l2
+    var l1 = l1
+    var l2 = l2
     let dummy = ListNode(-1)
-    var head = dummy
+    var cur = dummy
     var tag = 0
-    while head1 != nil || head2 != nil {
-        let val1 = head1 == nil ? 0 : head1!.val
-        let val2 = head2 == nil ? 0 : head2!.val
+    while l1 != nil || l2 != nil {
+        let val1 = l1 == nil ? 0 : l1!.val
+        let val2 = l2 == nil ? 0 : l2!.val
         let sum = val1 + val2 + tag
         tag = sum >= 10 ? 1 : 0
         let node = ListNode(sum % 10)
-        head.next = node
-        head = node
-        head1 = head1?.next
-        head2 = head2?.next
+        cur.next = node
+        cur = node
+        l1 = l1?.next
+        l2 = l2?.next
     }
     if tag == 1 {
         let node = ListNode(1)
-        head.next = node
+        cur.next = node
     }
     return dummy.next
 }

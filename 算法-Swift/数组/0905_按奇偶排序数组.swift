@@ -7,6 +7,10 @@
 //
 
 // https://leetcode-cn.com/problems/sort-array-by-parity/
+/*
+ 给定一个非负整数数组 A，返回一个数组，在该数组中， A 的所有偶数元素之后跟着所有奇数元素。
+ 你可以返回满足此条件的任何数组作为答案。
+ */
 
 import Foundation
 
@@ -22,7 +26,7 @@ func sortArrayByParity(_ A: [Int]) -> [Int] {
     var right = A.count - 1
     
     while left < right {
-        // 左奇右偶交换 其他情况移动指针
+        // 左奇右偶交换 其他情况移动指针 %2用&1代替效率高
         if (A[left] & 1 == 1) && (A[right] & 1 == 0) {
             (arr[left], arr[right]) = (arr[right], arr[left])
             left += 1

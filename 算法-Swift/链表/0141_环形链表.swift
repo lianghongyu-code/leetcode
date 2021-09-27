@@ -10,17 +10,6 @@
 
 import Foundation
 
-func hasCycle1(_ head: ListNode?) -> Bool {
-    
-    
-    return false
-}
-
-
-
-
-
-
 // 技巧: 快慢指针 有点龟兔赛跑的意思 扣圈
 func hasCycle(_ head: ListNode?) -> Bool {
     if head == nil || head?.next == nil {

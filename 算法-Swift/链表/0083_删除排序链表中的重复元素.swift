@@ -12,34 +12,8 @@ import Foundation
 
 func deleteDuplicates(_ head: ListNode?) -> ListNode? {
     
-    // 练习
-//    if head == nil || head?.next == nil {
-//        return head
-//    }
-//
-//    var tmp = head
-//    while tmp != nil && tmp?.next != nil {
-//        if tmp?.val == tmp?.next?.val {
-//            tmp?.next = tmp?.next?.next
-//        } else {
-//            tmp = tmp?.next
-//        }
-//    }
-//
-//    return head
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // 精简到一个指针
-    if head == nil && head?.next == nil {
+    if head == nil || head?.next == nil {
         return head
     }
     
@@ -55,8 +29,8 @@ func deleteDuplicates(_ head: ListNode?) -> ListNode? {
     return head
     
     // 双指针
-//    let sen = ListNode(-1)
-//    sen.next = head
+//    let dummy = ListNode(-1)
+//    dummy.next = head
 //    var pre = head
 //    var cur = head?.next
 //    while cur != nil {
@@ -68,5 +42,5 @@ func deleteDuplicates(_ head: ListNode?) -> ListNode? {
 //        cur = cur!.next
 //    }
 //
-//    return sen.next
+//    return dummy.next
 }

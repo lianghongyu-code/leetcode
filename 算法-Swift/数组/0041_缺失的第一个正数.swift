@@ -11,6 +11,8 @@
 
 import Foundation
 
+// 最后返回的数一定在[1,n+1]这个闭区间
+// 把每个数放到下标为这个数的位置上 第一个不匹配的下标+1即为所求 都匹配就是count+1
 func firstMissingPositive(_ nums: [Int]) -> Int {
     var nums = nums
     for i in 0..<nums.count {

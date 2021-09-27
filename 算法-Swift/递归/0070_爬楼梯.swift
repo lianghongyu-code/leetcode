@@ -11,7 +11,6 @@
 import Foundation
 
 func climbStairs(_ n: Int) -> Int {
-    
     if n <= 1 {
         return n
     }
@@ -19,7 +18,7 @@ func climbStairs(_ n: Int) -> Int {
     // 递归
 //    return climbStairs(n-1) + climbStairs(n-2)
     
-    //
+    // 迭代
     var first = 1;
     var second = 2
     for _ in 0..<n-2 { // 前两种情况是1和2  

@@ -19,11 +19,11 @@ func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
     return res
 }
 
-private func sumOfLeftLeaves_helper(_ node: TreeNode?, _ left: Bool) {
+private func sumOfLeftLeaves_helper(_ node: TreeNode?, _ isLeft: Bool) {
     if node == nil {
         return
     }
-    if node?.left == nil && node?.right == nil && left {
+    if node?.left == nil && node?.right == nil && isLeft {
         res += node!.val
     }
     if let left = node?.left {

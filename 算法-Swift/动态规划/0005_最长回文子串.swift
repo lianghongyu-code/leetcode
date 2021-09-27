@@ -18,9 +18,9 @@ func longestPalindrome(_ s: String) -> String {
     var first = 0
     var maxLength = 1
     var dp = Array.init(repeating: Array.init(repeating: false, count: s.count), count: s.count)
-    // 从左到右 从下到上
-    for i in (0..<s.count).reversed() {
-        for j in i..<s.count {
+    // 从右到左 从下到上 只填一半数据
+    for i in (0..<s.count).reversed() { // 从下到上
+        for j in i..<s.count { // 从右到左
             let length = j - i + 1
             dp[i][j] = (sArr[i] == sArr[j]) && (length <= 2 || dp[i + 1][j - 1])
             if dp[i][j] == true && length > maxLength {

@@ -7,17 +7,20 @@
 //
 
 // https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
+/*
+ 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
+ 求在该柱状图中，能够勾勒出来的矩形的最大面积。
+ */
 
 import Foundation
 
 // 精简
 func largestRectangleArea(_ heights: [Int]) -> Int {
     
-    // 练习
     var left = Array.init(repeating: -1, count: heights.count)
     var right = Array.init(repeating: heights.count, count: heights.count)
-    
     var stack = [Int]()
+
     for i in 0..<heights.count {
         while !stack.isEmpty && heights[i] <= heights[stack.last!] {
             right[stack.last!] = i
@@ -26,37 +29,13 @@ func largestRectangleArea(_ heights: [Int]) -> Int {
         left[i] = stack.isEmpty ? -1 : stack.last!
         stack.append(i)
     }
-    
+
     var res = 0
     for i in 0..<heights.count {
         res = max(res, (right[i] - left[i] - 1) * heights[i])
     }
-    
+
     return res
-    
-    
-    
-  
-    
-//    var left = Array.init(repeating: -1, count: heights.count)
-//    var right = Array.init(repeating: heights.count, count: heights.count)
-//    var stack = [Int]()
-//
-//    for i in 0..<heights.count {
-//        while !stack.isEmpty && heights[i] <= heights[stack.last!] {
-//            right[stack.last!] = i
-//            stack.removeLast()
-//        }
-//        left[i] = stack.isEmpty ? -1 : stack.last!
-//        stack.append(i)
-//    }
-//
-//    var res = 0
-//    for i in 0..<heights.count {
-//        res = max(res, (right[i] - left[i] - 1) * heights[i])
-//    }
-//
-//    return res
 }
 
 // 过程
@@ -66,7 +45,7 @@ func largestRectangleArea(_ heights: [Int]) -> Int {
 func largestRectangleArea0(_ heights: [Int]) -> Int {
     //    [6,7,5,2,4,5,9,3]
     // [-1,0,1,2,3,4,5,6,7,count]
-    // -1和count是高度为0哨兵
+    // -1和count是高度为0作为哨兵
     var left = Array.init(repeating: -1, count: heights.count)
     var right = Array.init(repeating: heights.count, count: heights.count)
     var stack = [Int]()

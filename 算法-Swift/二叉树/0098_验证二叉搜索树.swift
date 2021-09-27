@@ -7,9 +7,11 @@
 //
 
 // https://leetcode-cn.com/problems/validate-binary-search-tree/
+// 给定一个二叉树，判断其是否是一个有效的二叉搜索树。
 
 import Foundation
 
+// 或者中序遍历 升序或者降序
 private var min = Int.min
 func isValidBST(_ root: TreeNode?) -> Bool {
     if root == nil {

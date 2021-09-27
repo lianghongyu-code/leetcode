@@ -12,30 +12,16 @@ import Foundation
 
 func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
     
-    // 练习
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
     if head == nil {
         return nil
     }
     
     // 虚拟头节点
-    let sentinel = ListNode(-1)
-    sentinel.next = head
+    let dummy = ListNode(-1)
+    dummy.next = head
     
     // 记录当前和前一个
-    var pre = sentinel
+    var pre = dummy
     var cur = head
     
     while cur != nil {
@@ -47,5 +33,5 @@ func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
         cur = cur!.next
     }
     
-    return sentinel.next
+    return dummy.next
 }

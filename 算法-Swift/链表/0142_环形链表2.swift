@@ -35,7 +35,7 @@ func detectCycle(_ head: ListNode?) -> ListNode? {
         return nil
     }
     
-    // 有环
+    // 有环 慢指针从头到相遇点的距离一定是n倍的环的距离
     // 第二步找入环点
     var node = head
     while node !== tmp {

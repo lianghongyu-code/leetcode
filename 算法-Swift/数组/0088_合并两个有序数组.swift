@@ -7,24 +7,16 @@
 //
 
 // https://leetcode-cn.com/problems/merge-sorted-array/
-// 初始化 nums1 和 nums2 的元素数量分别为 m 和 n
-// 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素
+/*
+ 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。
+ 初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。你可以假设 nums1 的空间大小等于 m + n，这样它就有足够的空间保存来自 nums2 的元素。
+ */
 
 import Foundation
 
 func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
     
-    // 练习
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // 算法思路
+    // 算法思路 从后向前排序
     var len1 = m - 1
     var len2 = n - 1
     var len = m + n - 1

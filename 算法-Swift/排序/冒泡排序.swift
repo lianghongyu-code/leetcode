@@ -10,16 +10,6 @@ import Foundation
 
 func bubbleSort() {
     
-    
-    // 练习
-    
-    
-    
-    
-    
-    
-    
-    
     for i in 0..<sortArr.count-1 {
         for j in 0..<sortArr.count-1-i {
             if sortArr[j] > sortArr[j+1] {
@@ -27,6 +17,20 @@ func bubbleSort() {
             }
         }
     }
+    
+    // 优化: 提前有序
+//    for i in 0..<sortArr.count-1 {
+//        var sorted = true
+//        for j in 0..<sortArr.count-1-i {
+//            if sortArr[j] > sortArr[j+1] {
+//                (sortArr[j], sortArr[j+1]) = (sortArr[j+1], sortArr[j])
+//                sorted = false
+//            }
+//        }
+//        if sorted {
+//            break
+//        }
+//    }
     
     // 不能修改i
 //    for var i in 0...5 {
@@ -41,20 +45,4 @@ func bubbleSort() {
 //        arr.append(i)
 //    }
 //    print(arr)
-}
-
-// 提前有序
-func bubbleSort_1() {
-    for i in 0..<sortArr.count-1 {
-        var sorted = true
-        for j in 0..<sortArr.count-1-i {
-            if sortArr[j] > sortArr[j+1] {
-                (sortArr[j], sortArr[j+1]) = (sortArr[j+1], sortArr[j])
-                sorted = false
-            }
-        }
-        if sorted {
-            break
-        }
-    }
 }

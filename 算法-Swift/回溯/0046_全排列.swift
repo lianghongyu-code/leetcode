@@ -28,7 +28,6 @@ private func permute_helper(_ nums: [Int], _ cur: inout [Int], _ used: inout [Bo
         res.append(cur)
         return
     }
-    
     for i in 0..<nums.count {
         if used[i] == true { // 剪枝
             continue

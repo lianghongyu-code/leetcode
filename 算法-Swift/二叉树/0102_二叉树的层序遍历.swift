@@ -15,10 +15,10 @@ func levelOrder(_ root: TreeNode?) -> [[Int]] {
     if root == nil {
         return []
     }
-    
+
     var res = [[Int]]()
     var queue: [TreeNode] = [root!]
-    
+
     // 只有while循环 表示一个一个遍历
     // 里面有for循环 表示一层一层遍历 每层再一个一个遍历
     while !queue.isEmpty {
@@ -36,7 +36,7 @@ func levelOrder(_ root: TreeNode?) -> [[Int]] {
         }
         res.append(levelArr)
     }
-    
+
     return res
 }
 

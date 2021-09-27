@@ -8,7 +8,7 @@
 
 import Foundation
 
-// 结点
+// 单向链表
 public class ListNode {
     public var val: Int
     public var next: ListNode?
@@ -27,5 +27,30 @@ public class ListNode {
         self.val = val
         self.next = next
         
+    }
+}
+
+// 双向链表
+public class ListNode1 {
+    public var val: Int
+    public var next: ListNode1?
+    public var prev: ListNode1?
+    
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
+        self.prev = nil
+    }
+    
+    public init() {
+        self.val = 0
+        self.next = nil
+        self.prev = nil
+    }
+    
+    public init(_ val: Int, _ next: ListNode1?, _ prev: ListNode1) {
+        self.val = val
+        self.next = next
+        self.prev = prev
     }
 }

@@ -11,28 +11,14 @@
 
 import Foundation
 
-// 练习
-func reverseList(_ head: ListNode?) -> ListNode? {
-    
-    
-    return nil
-}
-
-
-
-
-
-
-
-
 // 递归
-func reverseList_1(_ head: ListNode?) -> ListNode? {
+func reverseList(_ head: ListNode?) -> ListNode? {
     
     if head == nil || head?.next == nil {
         return head
     }
     
-    let newHead: ListNode? = reverseList_1(head?.next)
+    let newHead = reverseList(head?.next)
     head?.next?.next = head
     head?.next = nil
     
@@ -40,21 +26,21 @@ func reverseList_1(_ head: ListNode?) -> ListNode? {
 }
 
 // 迭代 头插法
-func reverseList_2(_ head: ListNode?) -> ListNode? {
+func reverseList_1(_ head: ListNode?) -> ListNode? {
     
     if head == nil || head?.next == nil {
         return head
     }
     
     var cur = head
-    var pre: ListNode? = nil
+    var new: ListNode? = nil
     
     while cur != nil { // 右边 -> 下一个的左边
-        let tmp = cur?.next
-        cur?.next = pre
-        pre = cur
+        let tmp = cur!.next
+        cur!.next = new
+        new = cur
         cur = tmp
     }
     
-    return pre
+    return new
 }

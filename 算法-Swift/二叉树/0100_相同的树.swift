@@ -7,6 +7,10 @@
 //
 
 // https://leetcode-cn.com/problems/same-tree/
+/*
+ 给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
+ 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+ */
 
 import Foundation
 
@@ -24,7 +28,7 @@ func isSameTree_dfs(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
 
 // bfs
 func isSameTree_bfs(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
-    // 技巧: 一个队列 入队两个 出队两个
+    // 技巧: 一个队列 每次 入队两个出队两个
     var queue = [p, q]
     while !queue.isEmpty {
         let node1 = queue.removeFirst()

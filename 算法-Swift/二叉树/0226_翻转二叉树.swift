@@ -12,23 +12,11 @@ import Foundation
 
 func invertTree(_ root: TreeNode?) -> TreeNode? {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     if root == nil {
         return nil
     }
     
     // 前序遍历
-    // 技巧: left right
     (root!.left, root!.right) = (root!.right, root!.left)
     invertTree(root?.left)
     invertTree(root?.right)

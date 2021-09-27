@@ -33,11 +33,10 @@ func preorderTraversal(_ root: TreeNode?) -> [Int] {
         }
     }
     
-    return res
-    
     // 递归
 //    res.append(root!.val)
 //    preorderTraversal(root?.left)
 //    preorderTraversal(root?.right)
-//    return res
+    
+    return res
 }

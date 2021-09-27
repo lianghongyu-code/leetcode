@@ -7,10 +7,11 @@
 //
 
 // https://leetcode-cn.com/problems/intersection-of-two-arrays/
+// 给定两个数组，编写一个函数来计算它们的交集。
 
 import Foundation
 
-// 方法一: HashSet 可以在 O(1)O(1) 的时间内判断一个元素是否在集合中，从而降低时间复杂度
+// 方法一: HashSet 可以在 O(1) 的时间内判断一个元素是否在集合中，从而降低时间复杂度
 func intersection1(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
     let set1 = Set(nums1)
     let set2 = Set(nums2)

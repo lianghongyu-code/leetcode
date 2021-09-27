@@ -10,56 +10,28 @@ import Foundation
 
 func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     
-    // 练习
-//    var l1 = l1
-//    var l2 = l2
-//    let dummy = ListNode(-1)
-//    var res = dummy
-//
-//    while l1 != nil && l2 != nil {
-//        if l1!.val >= l2!.val {
-//            res.next = l2
-//            l2 = l2!.next
-//        } else {
-//            res.next = l1
-//            l1 = l1!.next
-//        }
-//        res = res.next!
-//    }
-//
-//    res.next = l1 ?? l2
-//
-//    return dummy.next
-    
-    
-    
-    
-    
-    
-    
-    
     // 迭代
     var l1 = l1
     var l2 = l2
     // 虚拟头结点
-    let res = ListNode(-1)
-    var pre = res
+    let dummy = ListNode(-1)
+    var cur = dummy
 
     while l1 != nil && l2 != nil {
         if l1!.val <= l2!.val {
-            pre.next = l1
+            cur.next = l1
             l1 = l1!.next
         } else {
-            pre.next = l2
+            cur.next = l2
             l2 = l2!.next
         }
-        pre = pre.next!
+        cur = cur.next!
     }
 
     // 有一个未结束时
-    pre.next = l1 ?? l2
+    cur.next = l1 ?? l2
 
-    return res.next
+    return dummy.next
     
     // 递归
 //    if l1 == nil {

@@ -12,18 +12,6 @@ import Foundation
 
 func middleNode(_ head: ListNode?) -> ListNode? {
     
-    // 练习
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     if head == nil {
         return nil
     }

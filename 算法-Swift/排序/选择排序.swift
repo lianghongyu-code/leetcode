@@ -11,14 +11,6 @@ import Foundation
 func selectionSort() {
 //    var arr = [5, 7, 40, 28, 62, 37, 12, 13, 14]
     
-    
-    // 练习
-    
-    
-    
-    
-    
-    
     for i in 0..<sortArr.count-1 {
         var min = i
         for j in i+1..<sortArr.count {
@@ -38,7 +30,6 @@ func selectionSort() {
 //    }
     
 //    print(arr)
-    
     
 //    let array = [1, 2, 3]
 //    let newArray = array.flatMap {(Array.init(repeating: $0, count: 2))}
